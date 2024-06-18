@@ -18,3 +18,6 @@ python3 kumonome.py [--ql int --maxviews int]
 
 
 ![Screenshot_5](https://github.com/idioinfectedstrixxx/kumonome/assets/172582897/024720e7-f66d-4e33-847a-cfd9806de37a)
+
+![изображение](https://github.com/idioinfectedstrixxx/kumonome/assets/172582897/3bfde0d5-cf2e-45a9-9e78-f4e0101ded05)
+
