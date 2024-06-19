@@ -69,7 +69,10 @@ class Yt_Parser:
             params.append(thumblink)
             #duration
             d_txt = re.findall(r'}},"simpleText":"(.*?)"},"viewCountText":', text)
-            dur = d_txt[0]
+            try:
+                dur = d_txt[0]
+            except:
+                dur = '<parsing failed>'
             params.append(dur)
             return params
 
@@ -139,8 +142,8 @@ class Yt_Parser:
                 with open('logs.txt', 'a+', encoding='utf-8') as logs:
                     try:
                         if self.mode == 'vid':
-                            logs.write(f'--{params[3]}--\nlink: {params[0]}\nuploaded by: {params[4]}\nupload date: {params[2]}\n{params[1]} views\n\n\n')
-                            print(f'--{params[3]}--\nlink: {params[0]}\nuploaded by: {params[4]}\nupload date: {params[2]}\n{params[1]} views\n\n\n')
+                            logs.write(f'--{params[3]}--\nlink: {params[0]}\nuploaded by: {params[4]}\nduration: {params[-1]}\nupload date: {params[2]}\n{params[1]} views\n\n\n')
+                            print(f'--{params[3]}--\nlink: {params[0]}\nuploaded by: {params[4]}\nduration: {params[-1]}\nupload date: {params[2]}\n{params[1]} views\n\n\n')
                             try:
                                 urllib.request.urlretrieve(params[5], f"{params[3]}_thumb.jpg")
                             except:
